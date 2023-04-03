@@ -1,34 +1,302 @@
-.App {
-  text-align: center;
+h1 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 80px;
+  line-height: 103px;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-family: "Antonio", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 52px;
+  letter-spacing: -1.5px;
+  margin: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+h3 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 12px;
+  line-height: 25px;
+  letter-spacing: 2.6px;
+  margin: 0;
+}
+
+h4 {
+  font-family: "League Spartan", sans-serif;
+  font-size: 11px;
+  line-height: 25px;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "League Spartan", sans-serif;
+  font-size: 16px;
+  line-height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url(../public//assets/background-stars.svg) hsl(240, 67%, 8%);
+}
+body .navbar {
+  width: 85vw;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid hsl(240, 6%, 54%);
+}
+@media (max-width: 1024px) {
+  body .navbar {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 5vh;
   }
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 500px) {
+  body .navbar {
+    flex-direction: row-reverse;
+    height: 12vh;
+  }
+}
+body .navbar a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: hsl(0, 0%, 100%);
+  letter-spacing: 1px;
+  font-weight: 700;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1024px) {
+  body .navbar a {
+    height: auto;
+    border-top: 20px solid transparent;
+  }
+}
+body .navbar .logo {
+  flex: 2;
+}
+@media (max-width: 500px) {
+  body .navbar .logo {
+    justify-content: flex-start;
+  }
+}
+body .navbar .planets-menu {
+  flex: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  body .navbar .planets-menu {
+    border-top: 20px solid transparent;
+  }
+}
+@media (max-width: 500px) {
+  body .navbar .planets-menu {
+    display: none;
+  }
+}
+body .navbar .planets-menu a {
+  padding: 0 12px;
+}
+@keyframes slide-in {
+  from {
+    transform: translateY(-20%);
+  }
+  to {
+    transform: translateY(0%);
+  }
+}
+body .navbar .planets-menu a:hover {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  animation: slide-in 0.5s;
+}
+body .navbar .planets-menu a.blue:hover {
+  background: hsl(194, 48%, 49%);
+  border-top: 20px solid hsl(194, 48%, 49%);
+  box-shadow: 1px 1px 50px hsl(194, 48%, 49%);
+}
+body .navbar .planets-menu a.dark-blue:hover {
+  background: hsl(222, 87%, 56%);
+  border-top: 20px solid hsl(222, 87%, 56%);
+  box-shadow: 1px 1px 50px hsl(222, 87%, 56%);
+}
+body .navbar .planets-menu a.yellow:hover {
+  background: hsl(33, 82%, 61%);
+  border-top: 20px solid hsl(33, 82%, 61%);
+  box-shadow: 1px 1px 50px hsl(33, 82%, 61%);
+}
+body .navbar .planets-menu a.purple:hover {
+  background: hsl(263, 67%, 51%);
+  border-top: 20px solid hsl(263, 67%, 51%);
+  box-shadow: 1px 1px 50px hsl(263, 67%, 51%);
+}
+body .navbar .planets-menu a.red:hover {
+  background: hsl(10, 63%, 51%);
+  border-top: 20px solid hsl(10, 63%, 51%);
+  box-shadow: 1px 1px 50px hsl(10, 63%, 51%);
+}
+body .navbar .planets-menu a.dark-red:hover {
+  background: hsl(2, 68%, 53%);
+  border-top: 20px solid hsl(2, 68%, 53%);
+  box-shadow: 1px 1px 50px hsl(2, 68%, 53%);
+}
+body .navbar .planets-menu a.orange:hover {
+  background: hsl(17, 73%, 46%);
+  border-top: 20px solid hsl(17, 73%, 46%);
+  box-shadow: 1px 1px 50px hsl(17, 73%, 46%);
+}
+body .navbar .planets-menu a.green:hover {
+  background: hsl(169, 73%, 44%);
+  border-top: 20px solid hsl(169, 73%, 44%);
+  box-shadow: 1px 1px 50px hsl(169, 73%, 44%);
+}
+body .navbar .mobile-menu-icon {
+  display: none;
+  background: transparent;
+  border: none;
+  padding: 1px;
+  cursor: pointer;
+  z-index: 2;
+}
+@media (max-width: 500px) {
+  body .navbar .mobile-menu-icon {
+    display: flex;
+  }
+}
+body .navbar .mobile-menu {
+  display: none;
+  width: 100%;
+  background-color: hsl(240, 67%, 8%);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  z-index: 2;
+  box-shadow: 1px 1px 50px hsl(240, 6%, 54%);
+}
+body .navbar .mobile-menu .menu-planets {
+  display: flex;
+  align-items: center;
+}
+body .navbar .mobile-menu a {
+  padding: 20px;
+  border-bottom: 1px solid hsl(240, 6%, 54%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .navbar .mobile-menu a .mobile-menu-close-icon img {
+  width: 18ox;
+  height: 18px;
+}
+body .navbar .mobile-menu a .circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 25px;
+}
+body .navbar .mobile-menu a.blue .circle {
+  background: hsl(194, 48%, 49%);
+  box-shadow: 1px 1px 50px hsl(194, 48%, 49%);
+}
+body .navbar .mobile-menu a.dark-blue .circle {
+  background: hsl(222, 87%, 56%);
+  box-shadow: 1px 1px 50px hsl(222, 87%, 56%);
+}
+body .navbar .mobile-menu a.yellow .circle {
+  background: hsl(33, 82%, 61%);
+  box-shadow: 1px 1px 50px hsl(33, 82%, 61%);
+}
+body .navbar .mobile-menu a.purple .circle {
+  background: hsl(263, 67%, 51%);
+  box-shadow: 1px 1px 50px hsl(263, 67%, 51%);
+}
+body .navbar .mobile-menu a.red .circle {
+  background: hsl(10, 63%, 51%);
+  box-shadow: 1px 1px 50px hsl(10, 63%, 51%);
+}
+body .navbar .mobile-menu a.dark-red .circle {
+  background: hsl(2, 68%, 53%);
+  box-shadow: 1px 1px 50px hsl(2, 68%, 53%);
+}
+body .navbar .mobile-menu a.orange .circle {
+  background: hsl(17, 73%, 46%);
+  box-shadow: 1px 1px 50px hsl(17, 73%, 46%);
+}
+body .navbar .mobile-menu a.green .circle {
+  background: hsl(169, 73%, 44%);
+  box-shadow: 1px 1px 50px hsl(169, 73%, 44%);
+}
+body .navbar .mobile-menu .mobile-menu-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid hsl(240, 6%, 54%);
+}
+body .navbar .mobile-menu .mobile-menu-close-icon {
+  background: transparent;
+  border: none;
+}
+body .planet-container {
+  width: 85vw;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  color: hsl(0, 0%, 100%);
+}
+@media (max-width: 1024px) {
+  body .planet-container {
+    height: auto;
+  }
+}
+@media (max-width: 500px) {
+  body .planet-container {
+    height: 80vh;
+    position: relative;
+  }
+}
+body .planet-container .planet-content {
+  height: 60vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1024px) {
+  body .planet-container .planet-content {
+    flex-direction: column;
+  }
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content {
+    height: 80vh;
+  }
+}
+body .planet-container .planet-content .planet-image {
+  flex: 2;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: relative;
 }
-
-.App-link {
-  color: #61dafb;
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-image {
+    height: 30vh;
+    margin-top: 10vh;
+  }
 }
-
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
@@ -36,3 +304,213 @@
     transform: rotate(360deg);
   }
 }
+body .planet-container .planet-content .planet-image .main-image {
+  max-width: 500px;
+  animation: spin;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-image .main-image {
+    max-width: 220px;
+    height: 220px;
+  }
+}
+body .planet-container .planet-content .planet-image .main-image img {
+  width: 400px;
+  height: 400px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-image .main-image img {
+    max-width: 220px;
+    height: 220px;
+  }
+}
+body .planet-container .planet-content .planet-image .geology {
+  position: absolute;
+  bottom: -10vh;
+  display: none;
+  width: 163px;
+  height: 200px;
+}
+@media (max-width: 1024px) {
+  body .planet-container .planet-content .planet-image .geology {
+    bottom: -5vh;
+  }
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-image .geology {
+    width: 50px;
+    height: 60px;
+    bottom: -2.5vh;
+  }
+}
+body .planet-container .planet-content .planet-image .geology img {
+  width: 163px;
+  height: 200px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-image .geology img {
+    width: 50px;
+    height: 60px;
+  }
+}
+body .planet-container .planet-content .planet-main-info {
+  width: 350px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+@media (max-width: 1024px) {
+  body .planet-container .planet-content .planet-main-info {
+    height: auto;
+    width: 100%;
+    flex-direction: row;
+    margin-top: 1vh;
+  }
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-main-info {
+    height: 40vh;
+    flex-direction: column;
+    text-align: center;
+    justify-content: flex-end;
+  }
+}
+body .planet-container .planet-content .planet-main-info .planet-description {
+  margin-top: 5vh;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  body .planet-container .planet-content .planet-main-info .planet-description {
+    width: 100%;
+    height: auto;
+    justify-content: center;
+  }
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-main-info .planet-description {
+    align-items: center;
+  }
+}
+body .planet-container .planet-content .planet-main-info .planet-description span {
+  color: hsl(240, 6%, 54%);
+}
+body .planet-container .planet-content .planet-main-info .planet-description span a {
+  font-size: 16px;
+  color: hsl(240, 6%, 54%);
+  margin-left: 10px;
+  font-weight: 700;
+}
+body .planet-container .planet-content .planet-main-info .tabs-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+@media (max-width: 1024px) {
+  body .planet-container .planet-content .planet-main-info .tabs-list {
+    height: 100%;
+    justify-content: flex-end;
+    gap: 12.5px;
+  }
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-main-info .tabs-list {
+    flex-direction: row;
+    position: absolute;
+    top: -40vh;
+  }
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs {
+  width: 300px;
+  padding: 10px 25px;
+  border: 2px solid hsl(240, 6%, 54%);
+  text-transform: uppercase;
+  cursor: pointer;
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-content .planet-main-info .tabs-list .tabs {
+    width: 15vw;
+    border: none;
+    border-bottom: 2px solid hsl(240, 6%, 54%);
+    padding: 0 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs.blue:hover {
+  background: hsl(194, 48%, 49%);
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs.dark-blue:hover {
+  background: hsl(222, 87%, 56%);
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs.yellow:hover {
+  background: hsl(33, 82%, 61%);
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs.purple:hover {
+  background: hsl(263, 67%, 51%);
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs.red:hover {
+  background: hsl(10, 63%, 51%);
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs.dark-red:hover {
+  background: hsl(2, 68%, 53%);
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs.orange:hover {
+  background: hsl(17, 73%, 46%);
+}
+body .planet-container .planet-content .planet-main-info .tabs-list .tabs.green:hover {
+  background: hsl(169, 73%, 44%);
+}
+body .planet-container .planet-general-info {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (max-width: 1024px) {
+  body .planet-container .planet-general-info {
+    height: 20vh;
+  }
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-general-info {
+    flex-direction: column;
+    height: 20vh;
+    gap: 15px;
+    margin: 10vh 0;
+  }
+}
+body .planet-container .planet-general-info .info-box {
+  padding: 25px;
+  width: 175px;
+  height: 80px;
+  border: 1px solid hsl(240, 6%, 54%);
+}
+@media (max-width: 500px) {
+  body .planet-container .planet-general-info .info-box {
+    width: 70vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+body .planet-container .planet-general-info .info-box p {
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: hsl(240, 6%, 54%);
+}/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,587 @@
+$Font-Antonio: 'Antonio', sans-serif;
+$Font-Spartan: 'League Spartan', sans-serif;
+
+$White: hsl(0, 0, 100);
+$Black: hsl(240, 67, 8);
+$Dark-Gray: hsl(240, 17, 26);
+$Light-gray: hsl(240, 6, 54);
+$Blue: hsl(194, 48, 49);
+$Dark-Blue: hsl(222, 87, 56);
+$Yellow: hsl(33, 82, 61);
+$Purple: hsl(263, 67, 51);
+$Red: hsl(10, 63, 51);
+$Dark-red: hsl(2, 68, 53);
+$Orange: hsl(17, 73, 46);
+$Green: hsl(169, 73, 44);
+
+
+
+$tablet-width: 1024px;
+$mobile-width: 500px;
+
+@mixin tablet {
+    @media (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+
+
+h1 {
+    font-family: $Font-Antonio;
+    font-weight: 500;
+
+    font-size: 80px;
+    line-height: 103px;
+    margin: 0;
+}
+
+h2 {
+    font-family: $Font-Antonio;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: -1.5px;
+    margin: 0;
+}
+
+h3 {
+    font-family: $Font-Spartan;
+    font-size: 12px;
+    line-height: 25px;
+    letter-spacing: 2.6px;
+    margin: 0;
+}
+
+h4 {
+    font-family: $Font-Spartan;
+    font-size: 11px;
+    line-height: 25px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+
+body {
+    margin: 0;
+    font-family: $Font-Spartan;
+    font-size: 16px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url(../public//assets/background-stars.svg) $Black;
+
+    .navbar {
+        width: 85vw;
+        height: 10vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid $Light-gray;
+
+        @include tablet {
+            flex-direction: column;
+            height: auto;
+            margin-bottom: 5vh;
+        }
+
+        @include mobile {
+            flex-direction: row-reverse;
+            height: 12vh;
+        }
+
+        a {
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $White;
+            letter-spacing: 1px;
+            font-weight: 700;
+            height: 10vh;
+            display: flex;
+            align-items: center;
+
+            @include tablet {
+                height: auto;
+                border-top: 20px solid transparent;
+            }
+
+        }
+
+        .logo {
+            flex: 2;
+
+            @include mobile {
+                justify-content: flex-start;
+            }
+        }
+
+        .planets-menu {
+            flex: 3;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include tablet {
+                border-top: 20px solid transparent;
+            }
+
+            @include mobile {
+                display: none;
+            }
+
+            a {
+                padding: 0 12px;
+
+                @keyframes slide-in {
+                    from {
+                        transform: translateY(-20%);
+                    }
+
+                    to {
+                        transform: translateY(0%);
+                    }
+                }
+
+                &:hover {
+                    border-bottom-right-radius: 15px;
+                    border-bottom-left-radius: 15px;
+                    animation: slide-in .5s;
+                }
+
+                &.blue:hover {
+                    background: $Blue;
+                    border-top: 20px solid $Blue;
+                    box-shadow: 1px 1px 50px $Blue;
+                }
+
+                &.dark-blue:hover {
+                    background: $Dark-Blue;
+                    border-top: 20px solid $Dark-Blue;
+                    box-shadow: 1px 1px 50px $Dark-Blue;
+                }
+
+                &.yellow:hover {
+                    background: $Yellow;
+                    border-top: 20px solid $Yellow;
+                    box-shadow: 1px 1px 50px $Yellow;
+                }
+
+                &.purple:hover {
+                    background: $Purple;
+                    border-top: 20px solid $Purple;
+                    box-shadow: 1px 1px 50px $Purple;
+                }
+
+                &.red:hover {
+                    background: $Red;
+                    border-top: 20px solid $Red;
+                    box-shadow: 1px 1px 50px $Red;
+                }
+
+                &.dark-red:hover {
+                    background: $Dark-red;
+                    border-top: 20px solid $Dark-red;
+                    box-shadow: 1px 1px 50px $Dark-red;
+                }
+
+                &.orange:hover {
+                    background: $Orange;
+                    border-top: 20px solid $Orange;
+                    box-shadow: 1px 1px 50px $Orange;
+                }
+
+                &.green:hover {
+                    background: $Green;
+                    border-top: 20px solid $Green;
+                    box-shadow: 1px 1px 50px $Green;
+                }
+            }
+        }
+
+        .mobile-menu-icon {
+            display: none;
+            background: transparent;
+            border: none;
+            padding: 1px;
+            cursor: pointer;
+            z-index: 2;
+
+            @include mobile {
+                display: flex;
+            }
+        }
+
+        .mobile-menu {
+            display: none;
+            width: 100%;
+            background-color: $Black;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            top: 0;
+            z-index: 2;
+            box-shadow: 1px 1px 50px $Light-gray;
+            
+            .menu-planets {
+                display: flex;
+                align-items: center;
+            }
+
+            a {
+                padding: 20px;
+                border-bottom: 1px solid $Light-gray;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                .mobile-menu-close-icon {
+                    img {
+                        width: 18ox;
+                        height: 18px;
+                    }
+                }
+
+                .circle {
+                    width: 20px;
+                    height: 20px;
+                    border-radius: 50%;
+                    margin-right: 25px;
+                }
+
+                &.blue .circle {
+                    background: $Blue;
+                    box-shadow: 1px 1px 50px $Blue;
+                }
+                &.dark-blue .circle {
+                    background: $Dark-Blue;
+                    box-shadow: 1px 1px 50px $Dark-Blue;
+                }
+
+                &.yellow .circle {
+                    background: $Yellow;
+                    box-shadow: 1px 1px 50px $Yellow;
+                }
+
+                &.purple .circle {
+                    background: $Purple;
+                    box-shadow: 1px 1px 50px $Purple;
+                }
+
+                &.red .circle {
+                    background: $Red;
+                    box-shadow: 1px 1px 50px $Red;
+                }
+
+                &.dark-red .circle {
+                    background: $Dark-red;
+                    box-shadow: 1px 1px 50px $Dark-red;
+                }
+
+                &.orange .circle {
+                    background: $Orange;
+                    box-shadow: 1px 1px 50px $Orange;
+                }
+
+                &.green .circle {
+                    background: $Green;
+                    box-shadow: 1px 1px 50px $Green;
+                }
+            }
+
+            .mobile-menu-header {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                border-bottom: 1px solid $Light-gray;
+            }
+
+            .mobile-menu-close-icon {
+                background: transparent;
+                border: none;
+            }
+        }
+    }
+
+    .planet-container {
+        width: 85vw;
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: $White;
+
+        @include tablet {
+            height: auto;
+        }
+
+        @include mobile {
+            height: 80vh;
+            position: relative;
+
+        }
+
+        .planet-content {
+            height: 60vh;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @include tablet {
+                flex-direction: column;
+            }
+
+            @include mobile {
+                height: 80vh;
+            }
+
+            .planet-image {
+                flex: 2;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                position: relative;
+
+                @include mobile {
+                    height: 30vh;
+                    margin-top: 10vh;
+                }
+
+                @keyframes spin {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                .main-image {
+                    max-width: 500px;
+                    animation: spin;
+                    // animation-duration: 40s;
+                    animation-iteration-count: infinite;
+                    animation-timing-function: linear;
+
+                    @include mobile {
+                        max-width: 220px;
+                        height: 220px;
+                    }
+
+                    img {
+                        width: 400px;
+                        height: 400px;
+                        object-fit: contain;
+
+                        @include mobile {
+                            max-width: 220px;
+                            height: 220px;
+                        }
+                    }
+                }
+
+                .geology {
+                    position: absolute;
+                    bottom: -10vh;
+                    display: none;
+                    width: 163px;
+                    height: 200px;
+
+                    @include tablet {
+                        bottom: -5vh;
+                    }
+
+                    @include mobile {
+                        width: 50px;
+                        height: 60px;
+                        bottom: -2.5vh;
+                    }
+
+                    img {
+                        width: 163px;
+                        height: 200px;
+                        object-fit: contain;
+
+                        @include mobile {
+                            width: 50px;
+                            height: 60px;
+                        }
+                    }
+                }
+            }
+
+            .planet-main-info {
+                width: 350px;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+                gap: 20px;
+
+                @include tablet {
+                    height: auto;
+                    width: 100%;
+                    flex-direction: row;
+                    margin-top: 1vh;
+                }
+
+                @include mobile {
+                    height: 40vh;
+                    flex-direction: column;
+                    text-align: center;
+                    justify-content: flex-end;
+
+                }
+
+                .planet-description {
+                    margin-top: 5vh;
+                    height: 100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-start;
+                    justify-content: space-between;
+
+                    @include tablet {
+                        width: 100%;
+                        height: auto;
+                        justify-content: center;
+                    }
+
+                    @include mobile {
+                        align-items: center;
+                    }
+
+                    span {
+                        color: $Light-gray;
+
+                        a {
+                            font-size: 16px;
+                            color: $Light-gray;
+                            margin-left: 10px;
+                            font-weight: 700;
+                        }
+                    }
+                }
+
+                .tabs-list {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    gap: 25px;
+                    @include tablet {
+                        height: 100%;
+                        justify-content: flex-end;
+                        gap: 12.5px;
+                    }
+
+                    @include mobile {
+                        flex-direction: row;
+                        position: absolute;
+                        top: -40vh;
+                    }
+
+                    .tabs {
+                        width: 300px;
+                        padding: 10px 25px;
+                        border: 2px solid $Light-gray;
+                        text-transform: uppercase;
+                        cursor: pointer;
+
+                        @include mobile {
+                            width: 15vw;
+                            border: none;
+                            border-bottom: 2px solid $Light-gray;
+                            padding: 0 25px;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                        }
+
+                        &.blue:hover {
+                            background: $Blue;
+                        }
+
+                        &.dark-blue:hover {
+                            background: $Dark-Blue;
+                        }
+
+                        &.yellow:hover {
+                            background: $Yellow;
+                        }
+
+                        &.purple:hover {
+                            background: $Purple;
+                        }
+
+                        &.red:hover {
+                            background: $Red;
+                        }
+
+                        &.dark-red:hover {
+                            background: $Dark-red;
+                        }
+
+                        &.orange:hover {
+                            background: $Orange;
+                        }
+
+                        &.green:hover {
+                            background: $Green;
+                        }
+                    }
+                }
+            }
+
+        }
+
+        .planet-general-info {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @include tablet {
+                height: 20vh;
+            }
+
+            @include mobile {
+                flex-direction: column;
+                height: 20vh;
+                gap: 15px;
+                margin: 10vh 0;
+            }
+
+            .info-box {
+                padding: 25px;
+                width: 175px;
+                height: 80px;
+                border: 1px solid $Light-gray;
+
+                @include mobile {
+                    width: 70vw;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                }
+
+                p {
+                    margin: 0;
+                    text-transform: uppercase;
+                    font-weight: 700;
+                    color: $Light-gray;
+                }
+            }
+        }
+    }
+}
