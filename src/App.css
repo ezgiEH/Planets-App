@@ -14,6 +14,11 @@ h2 {
   letter-spacing: -1.5px;
   margin: 0;
 }
+@media (max-width: 500px) {
+  h2 {
+    font-size: 28px;
+  }
+}
 
 h3 {
   font-family: "League Spartan", sans-serif;
@@ -315,6 +320,7 @@ body .planet-container .planet-content .planet-image .main-image {
   body .planet-container .planet-content .planet-image .main-image {
     max-width: 220px;
     height: 220px;
+    margin-top: 10vh;
   }
 }
 body .planet-container .planet-content .planet-image .main-image img {
@@ -379,7 +385,7 @@ body .planet-container .planet-content .planet-main-info {
 }
 @media (max-width: 500px) {
   body .planet-container .planet-content .planet-main-info {
-    height: 40vh;
+    height: 60vh;
     flex-direction: column;
     text-align: center;
     justify-content: flex-end;
