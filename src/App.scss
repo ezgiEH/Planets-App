@@ -77,18 +77,17 @@ body {
     font-size: 16px;
     line-height: 28px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
     background: url(../public//assets/background-stars.svg) $Black;
-    min-height: 100vh;
     .navbar {
-        width: 85vw;
+        width: 90vw;
         height: 10vh;
         display: flex;
         align-items: center;
         justify-content: center;
         border-bottom: 1px solid $Light-gray;
-
+        padding: 0  5vw;
         @include tablet {
             flex-direction: column;
             height: auto;
@@ -239,6 +238,7 @@ body {
 
             a {
                 padding: 20px;
+                border-top: 0px;
                 border-bottom: 1px solid $Light-gray;
                 display: flex;
                 align-items: center;
@@ -312,9 +312,16 @@ body {
         }
     }
 
+    .app-container{
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
     .planet-container {
         width: 85vw;
-        height: 80vh;
+        height: 90vh;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -332,7 +339,7 @@ body {
         }
 
         .planet-content {
-            height: 60vh;
+            height: 80vh;
             width: 100%;
             display: flex;
             align-items: center;
@@ -340,6 +347,7 @@ body {
 
             @include tablet {
                 flex-direction: column;
+                height: 60vh;
             }
 
             @include mobile {
@@ -426,7 +434,7 @@ body {
 
             .planet-main-info {
                 width: 350px;
-                height: 100%;
+                height: 90%;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -551,6 +559,7 @@ body {
 
         .planet-general-info {
             width: 100%;
+            height: 20vh;
             display: flex;
             align-items: center;
             justify-content: space-between;

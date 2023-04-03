@@ -42,18 +42,18 @@ body {
   font-size: 16px;
   line-height: 28px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   background: url(../public//assets/background-stars.svg) hsl(240, 67%, 8%);
-  min-height: 100vh;
 }
 body .navbar {
-  width: 85vw;
+  width: 90vw;
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
   border-bottom: 1px solid hsl(240, 6%, 54%);
+  padding: 0 5vw;
 }
 @media (max-width: 1024px) {
   body .navbar {
@@ -194,6 +194,7 @@ body .navbar .mobile-menu .menu-planets {
 }
 body .navbar .mobile-menu a {
   padding: 20px;
+  border-top: 0px;
   border-bottom: 1px solid hsl(240, 6%, 54%);
   display: flex;
   align-items: center;
@@ -251,9 +252,16 @@ body .navbar .mobile-menu .mobile-menu-close-icon {
   background: transparent;
   border: none;
 }
+body .app-container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 body .planet-container {
   width: 85vw;
-  height: 80vh;
+  height: 90vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -272,7 +280,7 @@ body .planet-container {
   }
 }
 body .planet-container .planet-content {
-  height: 60vh;
+  height: 80vh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -281,6 +289,7 @@ body .planet-container .planet-content {
 @media (max-width: 1024px) {
   body .planet-container .planet-content {
     flex-direction: column;
+    height: 60vh;
   }
 }
 @media (max-width: 500px) {
@@ -368,7 +377,7 @@ body .planet-container .planet-content .planet-image .geology img {
 }
 body .planet-container .planet-content .planet-main-info {
   width: 350px;
-  height: 100%;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -484,6 +493,7 @@ body .planet-container .planet-content .planet-main-info .tabs-list .tabs.green:
 }
 body .planet-container .planet-general-info {
   width: 100%;
+  height: 20vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
